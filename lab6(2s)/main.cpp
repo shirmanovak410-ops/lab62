@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <string>
 
-// Класс "Банковский кредит"
 class BankCredit {
 private:
     std::string name;          // название
@@ -46,7 +45,7 @@ int main() {
     std::string name, currency;
     double amount, rate;
     while (std::getline(infile, name)) {
-        if (name.empty()) continue; // пропуск пустых строк
+        if (name.empty()) continue;
         infile >> amount;
         infile.ignore();
         std::getline(infile, currency);
@@ -67,7 +66,7 @@ int main() {
         outfile << cr << "\n";
     }
     outfile << "\n";
-    credits.sort();  // list::sort без параметров
+    credits.sort(); 
 
     outfile << "Container after sorting by interest rate (%%)\n";
     for (const auto& cr : credits) {
